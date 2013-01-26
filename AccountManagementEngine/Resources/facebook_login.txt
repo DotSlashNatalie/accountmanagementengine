@@ -1,0 +1,15 @@
+https://m.facebook.com/login.php?refsrc=http%3A%2F%2Fm.facebook.com%2Findex.php&refid=8
+email={{username}}
+pass={{password}}
+lsd=AVrMdhYE
+charset_test=€,´,€,´,水,Д,Є
+version=1
+ajax=1
+width=1920
+pxr=1
+gps=1
+m_ts=1358832742
+li=ZiT-UIWK8L6q0qNMGoz6tT7I
+signup_layout=layout|lower_subdued_button||s_btn|special||l_btn|confirm||signupinstr||logininstr
+laststage=first
+login=Log In

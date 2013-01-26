@@ -1,0 +1,4 @@
+{{url}}/profile/?area=account;u=1;save
+passwrd1={{newpassword}}
+passwrd2={{newpassword}}
+oldpasswrd={{oldpassword}}

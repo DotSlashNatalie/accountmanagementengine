@@ -1,0 +1,7 @@
+https://m.facebook.com/login.php?refsrc=https%3A%2F%2Fm.facebook.com%2Fsettings%2Faccount%2F&refid=70
+old_password={{oldpassword}}
+new_password={{newpassword}}
+confirm_password={{newpassword}}
+change_password=
+save=Change Password
+charset_test=€,´,€,´,水,Д,Є

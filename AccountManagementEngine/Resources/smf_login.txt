@@ -1,0 +1,3 @@
+{{url}}/login2/
+user={{username}}
+passwrd={{password}}

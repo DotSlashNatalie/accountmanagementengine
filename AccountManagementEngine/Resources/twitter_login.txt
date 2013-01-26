@@ -1,0 +1,5 @@
+https://mobile.twitter.com/session
+username={{username}}
+password={{password}}
+authenticity_token={{token}}
+commit=Sign in

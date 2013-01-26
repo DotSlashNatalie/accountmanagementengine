@@ -1,0 +1,6 @@
+https://mobile.twitter.com/settings/password
+settings[current_password]={{oldpassword}}
+settings[password]={{newpassword}}
+settings[password_confirmation]={{newpassword}}
+authenticity_token={{token}}
+commit=Save
