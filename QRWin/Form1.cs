@@ -33,6 +33,17 @@ namespace QRWin
 
         private void btnMakeQR_Click(object sender, EventArgs e)
         {
+            if (txtName.Text == "")
+            {
+                MessageBox.Show("Please enter a value for the name.", "QRWin", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (txtKey.Text == "")
+            {
+                MessageBox.Show("Please enter your key or generate one.", "QRWin", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             qrCon1.Text = String.Format("otpauth://totp/{0}?secret={1}", txtName.Text, txtKey.Text);
         }
     }
