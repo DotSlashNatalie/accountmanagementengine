@@ -5,6 +5,7 @@ using System.Text;
 using System.Net;
 using System.Text.RegularExpressions;
 using AccountManagement.Engines;
+using System.Net.Security;
 
 namespace AccountManagement
 {
@@ -19,7 +20,24 @@ namespace AccountManagement
     public class AccountManagementEngine : IDisposable
     {
         public Dictionary<string, string> options = new Dictionary<string,string>();
-
+        
+        // This is an option of do-what-I-say-I-know-what-I'm-doing
+        public static void ignoreSSL()
+        {
+            try
+            {
+                //Change SSL checks so that all checks pass
+                ServicePointManager.ServerCertificateValidationCallback =
+                    new RemoteCertificateValidationCallback(
+                        delegate
+                        { return true; }
+                    );
+            }
+            catch (Exception)
+            {
+                
+            }
+        }
         public void AddData(string key, string val)
         {
             this.options[key] = val;
@@ -31,10 +49,10 @@ namespace AccountManagement
             switch (engine)
             {
                 case Engine.FACEBOOK:
-                    eng = new FacebookEngine();
+                    eng = new FacebookEngine(options);
                     break;
                 case Engine.TWITTER:
-                    eng = new TwitterEngine();
+                    eng = new TwitterEngine(options);
                     break;
                 case Engine.SMF:
                     // Options:

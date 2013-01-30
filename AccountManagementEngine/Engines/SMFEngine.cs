@@ -14,6 +14,11 @@ namespace AccountManagement.Engines
         {
             this.web = new WebEngine();
             this.options = options;
+
+            if (options.Keys.Contains("ignoressl") && options["ignoressl"] == "true")
+            {
+                AccountManagementEngine.ignoreSSL();
+            }
         }
         public bool ChangePassword(string username, string oldpass, string newpass)
         {

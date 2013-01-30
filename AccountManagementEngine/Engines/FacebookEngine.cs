@@ -9,6 +9,14 @@ namespace AccountManagement.Engines
     internal class FacebookEngine : IEngine, IDisposable
     {
         private WebEngine web;
+        public FacebookEngine(Dictionary<string, string> options)
+        {
+            //We don't need to store the options
+            if (options.Keys.Contains("ignoressl") && options["ignoressl"] == "true")
+            {
+                AccountManagementEngine.ignoreSSL();
+            }
+        }
         public bool ChangePassword(string username, string oldpass, string newpass)
         {
             web = new WebEngine("Nokia 7110/1.0");

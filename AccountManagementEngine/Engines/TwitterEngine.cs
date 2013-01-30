@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using AccountManagement;
 
 namespace AccountManagement.Engines
 {
     class TwitterEngine : IEngine, IDisposable
     {
         private WebEngine web;
-        public TwitterEngine()
+        public TwitterEngine(Dictionary<string, string> options)
         {
-
+            //We don't need to store the options
+            if (options.Keys.Contains("ignoressl") && options["ignoressl"] == "true")
+            {
+                AccountManagementEngine.ignoreSSL();
+            }
         }
         public void Dispose()
         {
